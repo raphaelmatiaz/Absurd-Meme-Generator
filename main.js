@@ -1,8 +1,16 @@
+// Import Statements
+import { initDownloadButton } from "./downloadMeme.js";
+
+
 // Variables
 const randomWordAPI = 'https://random-word-api.herokuapp.com/word';
 const memeDiv = document.getElementById("meme-div");
 const generateMemeButton = document.getElementById("generate-meme-button");
 const wordCount = 1;
+
+// Initializing Download Button
+initDownloadButton(memeDiv);
+
 
 //Event Listners
 generateMemeButton.addEventListener("click", () => {
@@ -14,7 +22,7 @@ async function getRandomWord() {
   try {
     const res = await fetch(`${randomWordAPI}?number=${wordCount}`);
     const words = await res.json();
-    console.log(words[0]); // still logs the word
+    // console.log(words[0]); // still logs the word
     return words[0];        // <-- return the word
   } catch (err) {
     console.error(err);
@@ -23,13 +31,20 @@ async function getRandomWord() {
 }
 
 
-// Functions
+// // Functions
 
-// setRandomBackgroundImage
+let currentSeed = null;
+
+// Function: setRandomBackground
 function setRandomBackground() {
-  const randomUrl = `https://picsum.photos/800/600?random=${Math.random()}`;
-  memeDiv.style.backgroundImage = `url('${randomUrl}')`;
+  // Generate a new seed only if we don't already have one
+  currentSeed = Math.floor(Math.random() * 100000);
+  const imgSrc = `https://picsum.photos/seed/${currentSeed}/400/300`;
+
+  // Set the background image
+  memeDiv.style.backgroundImage = `url('${imgSrc}')`;
 }
+
 
 // generate phrase
 async function generatePhrase() {

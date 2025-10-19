@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
     <script src="main.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
 <body>
     <section id="tool-wrapper">
         
-        <div id="meme-div">
-            <div id="no-one">No one: </div>
-            <p id="top-phrase">Meme phrase top</p>
-            <!-- <img src="https://picsum.photos/800/600" alt="random image"> -->
-            <p id="bottom-phrase">Meme phrase top</p>
+        <div class="wrapper">
+            <div id="meme-div">
+                <div id="no-one">No one: </div>
+                <p id="top-phrase">Meme phrase top</p>
+                <p id="bottom-phrase">Meme phrase top</p>
+            </div>
+            <div id="buttons-wrapper">
+                <button id="generate-meme-button" class="button">Generate Meme</button>
+                <button id="download-meme-button" class="button">Download Meme</button>
+            </div>
         </div>
-        <button id="generate-meme-button">Generate Meme</button>
-        <!-- <img src="https://picsum.photos/400/300?random=12345"> -->
     </section>
 </body>
 </html>

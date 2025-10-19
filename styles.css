@@ -26,7 +26,7 @@
     box-shadow: 1px 1px 8px black;
 }
 
-#generate-meme-button {
+.button {
     width: 200px;
     padding: 18px;
     border-radius: 24px;
@@ -34,6 +34,8 @@
     border: 1px solid black;
     box-shadow: 1px 1px 2px black;
     margin-top: 32px;
+    font-weight: 700;
+    font-size: 1.6rem;
 }
 
 #generate-meme-button:hover {
@@ -44,10 +46,44 @@
     width: 100%;
     background-color: white;
     height: fit-content;
-    padding-left: 18px;
+    padding-left: 16px;
     color: black;
 }
 
 #top-phrase {
     background-color: black;
+}
+
+#buttons-wrapper {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 600px) {
+    #meme-div {
+        width: 355px;
+        height: 355px;
+    }
+
+    #no-one {
+        padding-left: 0.8rem;
+        font-size: 2.4rem;
+    }
+
+    #top-phrase {
+        font-size: 2.4rem;
+    }
+
+    #buttons-wrapper {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 }
